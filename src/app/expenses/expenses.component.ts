@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Expense } from './expense';
+import { Expense } from '../models/expense';
 
 @Component({
   selector: 'app-expenses',

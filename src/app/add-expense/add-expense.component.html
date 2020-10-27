@@ -22,7 +22,7 @@
       <div class="form-group">
         <mat-form-field appearance="fill">
           <mat-label>Select a Category</mat-label>
-          <mat-select>
+          <mat-select formControlName="expCategory">
             <mat-option *ngFor="let cat of categories" [value]="cat.value">
               {{cat.viewValue}}
             </mat-option>
@@ -32,7 +32,7 @@
       <div class="form-group">
         <mat-form-field appearance="fill">
           <mat-label>Choose a date</mat-label>
-          <input matInput [matDatepicker]="picker">
+          <input matInput [matDatepicker]="picker" formControlName="createdDt">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
@@ -49,7 +49,6 @@
             Cancel
         </button>
     </div>
-
     </form>
   </div>
 </div>
