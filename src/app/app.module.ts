@@ -15,14 +15,16 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { AddExpenseComponent } from './add-expense/add-expense.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AngularMaterialModule } from './angular-material.module'; 
+import { AngularMaterialModule } from './angular-material.module';
+import { UpdateExpenseComponent } from './update-expense/update-expense.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     ExpensesComponent,
-    AddExpenseComponent
+    AddExpenseComponent,
+    UpdateExpenseComponent
   ],
   imports: [
     BrowserModule,

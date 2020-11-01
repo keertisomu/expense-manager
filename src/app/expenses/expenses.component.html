@@ -7,28 +7,37 @@
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
   
-    <!-- Position Column -->
+    <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Name </th>
       <td mat-cell *matCellDef="let expense"> {{expense.name}} </td>
     </ng-container>
   
-    <!-- Name Column -->
+    <!-- Value Column -->
     <ng-container matColumnDef="value">
       <th mat-header-cell *matHeaderCellDef> Value </th>
       <td mat-cell *matCellDef="let expense"> {{expense.value}} </td>
     </ng-container>
   
-    <!-- Weight Column -->
+    <!-- category Column -->
     <ng-container matColumnDef="category">
       <th mat-header-cell *matHeaderCellDef> Category </th>
       <td mat-cell *matCellDef="let expense"> {{expense.category}} </td>
     </ng-container>
   
-    <!-- Symbol Column -->
+    <!-- created date Column -->
     <ng-container matColumnDef="date">
       <th mat-header-cell *matHeaderCellDef> Date </th>
       <td mat-cell *matCellDef="let expense"> {{expense.created | date:'short'}} </td>
+    </ng-container>
+
+    <!-- delete Column -->
+    <ng-container matColumnDef="delExpense">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let expense"> 
+        <button style="margin-right:10px" mat-raised-button color="primary" [routerLink]="['/updateexpense',expense.id]">Update</button> 
+        <button mat-raised-button color="warn" (click)="deleteExpense(expense)">Delete</button> 
+      </td>
     </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
